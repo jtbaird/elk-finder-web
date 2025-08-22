@@ -3,8 +3,8 @@ name: Build and Deploy to S3
 on:
   push:
     branches: [main]
-    paths:
-      - 'infra/**'
+    # paths:
+    #   - 'infra/**'
 
 jobs:
   build-and-deploy:
