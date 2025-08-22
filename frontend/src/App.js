@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Tabs, Tab, Box } from '@mui/material';
 import Regression from './pages/Regression';
+import DataSources from './pages/DataSources';
 
 // Example page components
 function Home() {
@@ -10,33 +11,41 @@ function Home() {
 function Map() {
   return <h2>Map Page</h2>;
 }
-function Contact() {
-  return <h2>Contact Page</h2>;
+
+// Custom Tabs component to sync with router
+function NavTabs() {
+  const location = useLocation();
+  const tabPaths = ['/', '/map', '/datasources', '/regression'];
+  const currentTab = tabPaths.indexOf(location.pathname);
+
+  return (
+    <Tabs
+      orientation="vertical"
+      value={currentTab === -1 ? 0 : currentTab}
+      sx={{ borderRight: 1, borderColor: 'divider', minWidth: 180 }}
+    >
+      <Tab label="Home" component={Link} to="/" />
+      <Tab label="Map" component={Link} to="/map" />
+      <Tab label="Data Sources" component={Link} to="/datasources" />
+      <Tab label="Linear Regression" component={Link} to="/regression" />
+    </Tabs>
+  );
 }
 
 function App() {
   return (
     <Router>
-      <nav style={{ padding: 16 }}>
-        <Button component={Link} to="/" variant="contained" color="primary" sx={{ mr: 2 }}>
-          Home
-        </Button>
-        <Button component={Link} to="/map" variant="contained" color="primary" sx={{ mr: 2 }}>
-          Map
-        </Button>
-        <Button component={Link} to="/contact" variant="contained" color="primary">
-          Contact
-        </Button>
-        <Button component={Link} to="/regression" variant="contained" color="primary">
-          Linear Regression
-        </Button>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/regression" element={<Regression />} />
-      </Routes>
+      <Box sx={{ display: 'flex', height: '100vh' }}>
+        <NavTabs />
+        <Box sx={{ flexGrow: 1, p: 3 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/datasources" element={<DataSources />} />
+            <Route path="/regression" element={<Regression />} />
+          </Routes>
+        </Box>
+      </Box>
     </Router>
   );
 }
