@@ -94,7 +94,7 @@ function App() {
           </Box>
           <Box sx={{ flexGrow: 1, p: 3 }}>
             <Routes>
-              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/prediction" element={<Prediction />} />
               <Route path="/regression" element={<Regression />} />
               <Route path="/datasources" element={<DataSources />} />
