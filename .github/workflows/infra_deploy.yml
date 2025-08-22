@@ -26,5 +26,5 @@ jobs:
         working-directory: ./infra
 
       - name: Terraform Import and Apply S3 Bucket
-        run: terraform import aws_s3_bucket.bullseye_forecast $S3_BUCKET || true && terraform apply -auto-approve
+        run: terraform import aws_s3_bucket.bullseye_forecast $AWS_S3_BUCKET || true && terraform apply -auto-approve
         working-directory: ./infra
