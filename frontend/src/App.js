@@ -21,7 +21,7 @@ function Banner() {
       sx={{
         width: '100%',
         height: 200,
-        backgroundImage: 'url(/banner.jpg)', // Place your landscape photo in public/banner.jpg
+        backgroundImage: 'url(/banner.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
@@ -39,9 +39,10 @@ function Banner() {
           py: 1,
           borderRadius: 2,
           position: 'absolute',
-          top: 24,
+          top: '50%',
           left: '50%',
-          transform: 'translateX(-50%)',
+          transform: 'translate(-50%, -50%)', // Center both vertically and horizontally
+          fontFamily: 'Times New Roman, Times, serif'
         }}
       >
         BULLSEYE FORECAST
@@ -60,7 +61,23 @@ function NavTabs() {
     <Tabs
       orientation="vertical"
       value={currentTab === -1 ? 0 : currentTab}
-      sx={{ borderRight: 1, borderColor: 'divider', minWidth: 180, mt: 2 }}
+      textColor="inherit"
+      sx={{
+        borderRight: 1,
+        borderColor: 'divider',
+        minWidth: 180,
+        mt: 2,
+        '& .MuiTab-root': {
+          color: 'black', // default tab text color
+        },
+        '& .Mui-selected': {
+          color: 'rgb(74, 76, 41)', // dark green for selected tab text
+          fontWeight: 'bold',
+        },
+        '& .MuiTabs-indicator': {
+          backgroundColor: 'rgb(74, 76, 41)', // dark green indicator
+        },
+      }}
     >
       <Tab label="Home" component={Link} to="/" />
       <Tab label="Prediction" component={Link} to="/prediction" />
@@ -77,7 +94,9 @@ function App() {
       <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Banner />
         <Box sx={{ display: 'flex', flexGrow: 1 }}>
-          <NavTabs />
+          <Box sx={{ backgroundColor: 'rgb(164, 167, 149)', minWidth: 180, pt: 2 }}>
+            <NavTabs />
+          </Box>
           <Box sx={{ flexGrow: 1, p: 3 }}>
             <Routes>
               <Route path="/" element={<Home />} />
