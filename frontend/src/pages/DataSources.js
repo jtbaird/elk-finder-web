@@ -1,5 +1,3 @@
-import React from 'react';
-
 function DataSources() {
   return <h2>Page to link to datasources, and contain contact form to reccomend feature exploration</h2>;
 }
