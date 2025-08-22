@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { Tabs, Tab, Box } from '@mui/material';
 import Regression from './pages/Regression';
 import DataSources from './pages/DataSources';
+import About from './pages/About';
+import Prediction from './pages/Prediction';  
 
 // Example page components
 function Home() {
@@ -15,7 +17,7 @@ function Map() {
 // Custom Tabs component to sync with router
 function NavTabs() {
   const location = useLocation();
-  const tabPaths = ['/', '/map', '/datasources', '/regression'];
+  const tabPaths = ['/', '/prediction', '/regression', '/datasources', '/about'];
   const currentTab = tabPaths.indexOf(location.pathname);
 
   return (
@@ -25,9 +27,10 @@ function NavTabs() {
       sx={{ borderRight: 1, borderColor: 'divider', minWidth: 180 }}
     >
       <Tab label="Home" component={Link} to="/" />
-      <Tab label="Map" component={Link} to="/map" />
-      <Tab label="Data Sources" component={Link} to="/datasources" />
+      <Tab label="Prediction" component={Link} to="/prediction" />
       <Tab label="Linear Regression" component={Link} to="/regression" />
+      <Tab label="Data Sources" component={Link} to="/datasources" />
+      <Tab label="About" component={Link} to="/about" />
     </Tabs>
   );
 }
@@ -40,9 +43,10 @@ function App() {
         <Box sx={{ flexGrow: 1, p: 3 }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/map" element={<Map />} />
-            <Route path="/datasources" element={<DataSources />} />
+            <Route path="/prediction" element={<Prediction />} />
             <Route path="/regression" element={<Regression />} />
+            <Route path="/datasources" element={<DataSources />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </Box>
       </Box>
