@@ -1,0 +1,14 @@
+name: Build and Deploy to S3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'infra/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
