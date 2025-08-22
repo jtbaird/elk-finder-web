@@ -26,7 +26,7 @@ function Banner() {
         variant="h2"
         sx={{
           color: 'white',
-          backgroundColor: 'rgba(0,0,0,0.5)',
+          backgroundColor: 'rgba(164, 167, 149, 0.5)',
           px: 3,
           py: 1,
           borderRadius: 0,
