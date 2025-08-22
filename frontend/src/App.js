@@ -37,7 +37,7 @@ function Banner() {
           backgroundColor: 'rgba(0,0,0,0.5)',
           px: 3,
           py: 1,
-          borderRadius: 2,
+          borderRadius: 0,
           position: 'absolute',
           top: '50%',
           left: '50%',
@@ -69,10 +69,13 @@ function NavTabs() {
         mt: 2,
         '& .MuiTab-root': {
           color: 'black', // default tab text color
+          fontFamily: 'Times New Roman, Times, serif',
+          fontSize: '1.1rem'
         },
         '& .Mui-selected': {
           color: 'rgb(74, 76, 41)', // dark green for selected tab text
           fontWeight: 'bold',
+          fontFamily: 'Times New Roman, Times, serif'
         },
         '& .MuiTabs-indicator': {
           backgroundColor: 'rgb(74, 76, 41)', // dark green indicator
