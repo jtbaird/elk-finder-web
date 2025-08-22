@@ -89,7 +89,7 @@ function App() {
       <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Banner />
         <Box sx={{ display: 'flex', flexGrow: 1 }}>
-          <Box sx={{ backgroundColor: 'rgb(164, 167, 149)', minWidth: 180, pt: 2 }}>
+          <Box sx={{ backgroundColor: 'rgb(164, 167, 149)', minWidth: 180, width: 180, pt: 2 }}>
             <NavTabs />
           </Box>
           <Box sx={{ flexGrow: 1, p: 3 }}>
