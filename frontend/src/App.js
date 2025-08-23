@@ -73,7 +73,7 @@ function NavTabs() {
   return (
     <Box
       sx={{
-        backgroundColor: 'rgb(164, 167, 149)', // Your green color
+        backgroundColor: 'rgb(164, 167, 149)',
         minWidth: 180, // Set the width for both background and tabs
         width: 180,
         height: '100%',
@@ -144,6 +144,7 @@ function NavTabs() {
 }
 
 function App() {
+  // connects routes to underlying page functions
   return (
     <Router>
       <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>

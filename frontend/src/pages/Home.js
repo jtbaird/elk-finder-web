@@ -38,6 +38,8 @@ function Home() {
         <ul>
           <li><strong>Weather data collection:</strong></li>
           <ul>
+            <li>My <a href="https://www.ncei.noaa.gov/" target="_blank" rel="noopener noreferrer">best weather source</a> is down for maintenance for "weeks," so will see what I can drum up in the meantime.
+            </li>
             <li>This is probably the most arduous and largest effort of the whole project. This really is the core of the project though,
                so once it's completed I think we'll start to see something interesting.
             </li>
