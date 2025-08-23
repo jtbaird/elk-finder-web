@@ -22,7 +22,7 @@ function About() {
           }}
         />
         <Typography variant="body1">
-          Hello, my name is John Baird! I'm an avid outdoorsman, and am the guy behind Bullseye Forecast. The world is big and
+          Hello, my name is John Baird! I'm an avid outdoorsman, and the guy behind Bullseye Forecast. The world is big and
           our time is short, so when I came across the Utah DWR harvest reports, I immediately wondered if it could be leveraged 
           to help myself and others better allocate our time in the backcountry. Outside of my hobbies and this personal project, 
           I work as a SRE and data engineer. If you're interested in collaborating, have questions, or just 
