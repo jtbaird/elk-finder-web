@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Tabs, Tab, Box, Typography } from '@mui/material';
+import { Tabs, Tab, Box, Typography, Collapse } from '@mui/material';
+import React from 'react';
 import Home from './pages/Home';
 import Regression from './pages/Regression';
 import DataSources from './pages/DataSources';
@@ -46,40 +47,85 @@ function Banner() {
 // Custom Tabs component to sync with router
 function NavTabs() {
   const location = useLocation();
-  const tabPaths = ['/home', '/prediction', '/regression', '/datasources', '/about'];
-  const currentTab = tabPaths.indexOf(location.pathname);
+  const [methodologyOpen, setMethodologyOpen] = React.useState(false);
+
+  // Tab values
+  const TAB_HOME = 0;
+  const TAB_PREDICTION = 1;
+  const TAB_METHODOLOGY = 2;
+  const TAB_METHODOLOGY_REGRESSION = 3;
+  const TAB_DATASOURCES = 4;
+  const TAB_ABOUT = 5;
+
+  // Determine selected tab value
+  let tabValue = TAB_HOME;
+  if (location.pathname === '/home' || location.pathname === '/') tabValue = TAB_HOME;
+  else if (location.pathname === '/prediction') tabValue = TAB_PREDICTION;
+  else if (location.pathname === '/methodology/regression') tabValue = TAB_METHODOLOGY_REGRESSION;
+  else if (location.pathname.startsWith('/methodology')) tabValue = TAB_METHODOLOGY;
+  else if (location.pathname === '/datasources') tabValue = TAB_DATASOURCES;
+  else if (location.pathname === '/about') tabValue = TAB_ABOUT;
+
+  // Handler to collapse Methodology when other tabs are clicked
+  const handleCollapse = () => setMethodologyOpen(false);
 
   return (
-    <Tabs
-      orientation="vertical"
-      value={currentTab === -1 ? 0 : currentTab}
-      textColor="inherit"
-      sx={{
-        borderRight: 1,
-        borderColor: 'divider',
-        minWidth: 180,
-        mt: 2,
-        '& .MuiTab-root': {
-          color: 'black', // default tab text color
-          fontFamily: 'Times New Roman, Times, serif',
-          fontSize: '1.1rem'
-        },
-        '& .Mui-selected': {
-          color: 'rgb(74, 76, 41)', // dark green for selected tab text
-          fontWeight: 'bold',
-          fontFamily: 'Times New Roman, Times, serif'
-        },
-        '& .MuiTabs-indicator': {
-          backgroundColor: 'rgb(74, 76, 41)', // dark green indicator
-        },
-      }}
-    >
-      <Tab label="Home" component={Link} to="/home" />
-      <Tab label="Prediction" component={Link} to="/prediction" />
-      <Tab label="Linear Regression" component={Link} to="/regression" />
-      <Tab label="Data Sources" component={Link} to="/datasources" />
-      <Tab label="About" component={Link} to="/about" />
-    </Tabs>
+    <Box>
+      <Tabs
+        orientation="vertical"
+        value={tabValue}
+        textColor="inherit"
+        sx={{
+          borderRight: 1,
+          borderColor: 'divider',
+          minWidth: 180,
+          mt: 2,
+          '& .MuiTab-root': {
+            color: 'black',
+            fontFamily: 'Times New Roman, Times, serif',
+            fontSize: '1.1rem'
+          },
+          '& .Mui-selected': {
+            color: 'rgb(74, 76, 41)',
+            fontWeight: 'bold',
+            fontFamily: 'Times New Roman, Times, serif'
+          },
+          '& .MuiTabs-indicator': {
+            backgroundColor: 'rgb(74, 76, 41)',
+          },
+        }}
+      >
+        <Tab label="Home" value={TAB_HOME} component={Link} to="/home" onClick={handleCollapse} />
+        <Tab label="Prediction" value={TAB_PREDICTION} component={Link} to="/prediction" onClick={handleCollapse} />
+        <Tab
+          label="Methodology"
+          value={TAB_METHODOLOGY}
+          onClick={() => setMethodologyOpen((open) => !open)}
+          sx={{ justifyContent: 'space-between', display: 'flex' }}
+        />
+        <Tab
+          label={
+            <span style={{ fontSize: '.95rem', fontFamily: 'Times New Roman, Times, serif' }}>
+              Linear Regression
+            </span>
+          }
+          value={TAB_METHODOLOGY_REGRESSION}
+          component={Link}
+          to="/methodology/regression"
+          sx={{
+            display: methodologyOpen || location.pathname.startsWith('/methodology') ? 'block' : 'none',
+            color: tabValue === TAB_METHODOLOGY_REGRESSION ? 'rgb(74, 76, 41)' : 'black',
+            textAlign: 'center',
+            minWidth: '100%',
+            fontWeight: tabValue === TAB_METHODOLOGY_REGRESSION ? 'bold' : 'normal',
+            pl: 3,
+          }}
+          onClick={handleCollapse}
+        />
+        <Tab label="Data Sources" value={TAB_DATASOURCES} component={Link} to="/datasources" onClick={handleCollapse} />
+        <Tab label="About" value={TAB_ABOUT} component={Link} to="/about" onClick={handleCollapse} />
+      </Tabs>
+    </Box>
   );
 }
 
@@ -97,7 +143,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/prediction" element={<Prediction />} />
-              <Route path="/regression" element={<Regression />} />
+              <Route path="/methodology/regression" element={<Regression />} />
               <Route path="/datasources" element={<DataSources />} />
               <Route path="/about" element={<About />} />
             </Routes>

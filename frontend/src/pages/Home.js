@@ -29,7 +29,7 @@ function Home() {
             </ul>
           </li>
         </ul>
-        This list is not exhaustive, and does not begin to touch the vast economic and cultural benefits of hunting. Head over to our <Link to="/methodology/linearregressions">linear regression page</Link> to see some preliminary forecasting!
+        This list is not exhaustive, and does not begin to touch the vast economic and cultural benefits of hunting. Head over to our <Link to="/methodology/regression">linear regression page</Link> to see some preliminary forecasting!
       </Typography>
       <Typography variant="h5" gutterBottom>
         How to Navigate
