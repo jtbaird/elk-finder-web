@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 
 function About() {
   return (
-    <Box sx={{ fontFamily: 'Times New Roman, Times, serif', p: 3 }}>
+    <Box sx={{ color: 'rgb(74, 76, 41)' }}>
       <Typography variant="h4" gutterBottom>
         About the Author
       </Typography>
@@ -29,11 +29,7 @@ function About() {
           interested in collaborating, have questions, or just want to chat, here's where you can reach me:
           <ul>
             <li>Email: jtbaird95@gmail.com</li>
-            <li>GitHub:</li>
-            <ul>
-                <li><a href="https://github.com/jtbaird/elk-finder-web" target="_blank" rel="noopener noreferrer">elk-finder-web</a></li>
-                <li><a href="https://github.com/jtbaird/elk-finder" target="_blank" rel="noopener noreferrer">elk-finder</a></li>
-            </ul>
+            <li>GitHub: <a href="https://github.com/jtbaird" target="_blank" rel="noopener noreferrer">github.com/jtbaird</a></li>
             <li>LinkedIn: <a href="www.linkedin.com/in/john-baird-0b793aa5" target="_blank" rel="noopener noreferrer">linkedin.com/in/john-baird-0b793aa5</a></li>
           </ul>
         </Typography>

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { Tabs, Tab, Box, Typography, Collapse } from '@mui/material';
 import React from 'react';
 import Home from './pages/Home';
-import Regression from './pages/Regression';
+import LinearRegressions from './pages/LinearRegressions';
 import DataSources from './pages/DataSources';
 import About from './pages/About';
 import Prediction from './pages/Prediction';
@@ -79,7 +79,7 @@ function NavTabs() {
           borderRight: 1,
           borderColor: 'divider',
           minWidth: 180,
-          mt: 2,
+          mt: 0,
           '& .MuiTab-root': {
             color: 'black',
             fontFamily: 'Times New Roman, Times, serif',
@@ -143,7 +143,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/prediction" element={<Prediction />} />
-              <Route path="/methodology/regression" element={<Regression />} />
+              <Route path="/methodology/regression" element={<LinearRegressions />} />
               <Route path="/datasources" element={<DataSources />} />
               <Route path="/about" element={<About />} />
             </Routes>

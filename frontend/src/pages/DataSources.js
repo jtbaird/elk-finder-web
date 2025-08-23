@@ -13,7 +13,7 @@ function DataSources() {
   };
 
   return (
-    <Box sx={{ fontFamily: 'Times New Roman, Times, serif', p: 3 }}>
+    <Box sx={{ color: 'rgb(74, 76, 41)' }}>
       <Typography variant="h4" gutterBottom>
         Data Sources
       </Typography>
@@ -21,18 +21,18 @@ function DataSources() {
         This project uses the following data sources:
         <ul>
           <li>
-            <a href="https://wildlife.utah.gov/hunting/biggame/harvest-reports.html" target="_blank" rel="noopener noreferrer">
+            <a href="https://wildlife.utah.gov/hunting/main-hunting-page/big-game/big-game-harvest-data.html" target="_blank" rel="noopener noreferrer">
               Utah DWR Big Game Harvest Reports
             </a>
           </li>
           <li>
-            <a href="https://www.weather.gov/" target="_blank" rel="noopener noreferrer">
-              National Weather Service
+            <a href="https://www.ncei.noaa.gov/access/past-weather/utah" target="_blank" rel="noopener noreferrer">
+              NOAA Weather Data
             </a>
           </li>
           <li>
-            <a href="https://www.usgs.gov/" target="_blank" rel="noopener noreferrer">
-              USGS Geographic Data
+            <a href="https://nwcc-apps.sc.egov.usda.gov/imap/#version=170&elements=&networks=!&states=!&counties=!&hucs=&minElevation=&maxElevation=&elementSelectType=any&activeOnly=true&activeForecastPointsOnly=true&hucLabels=false&hucIdLabels=false&hucParameterLabels=true&stationLabels=&overlays=&hucOverlays=&basinOpacity=75&basinNoDataOpacity=25&basemapOpacity=100&maskOpacity=0&mode=data&openSections=dataElement,parameter,date,basin,options,elements,location,networks&controlsOpen=true&popup=&popupMulti=&popupBasin=&base=esriNgwm&displayType=station&basinType=6&dataElement=PREC&depth=-8&parameter=PCTMED&frequency=DAILY&duration=wytd&customDuration=&dayPart=E&monthPart=E&forecastPubDay=1&forecastExceedance=50&useMixedPast=true&seqColor=1&divColor=7&scaleType=D&scaleMin=&scaleMax=&referencePeriodType=POR&referenceBegin=1991&referenceEnd=2020&minimumYears=20&hucAssociations=true&relativeDate=-1&lat=39.420&lon=-111.830&zoom=7.0" target="_blank" rel="noopener noreferrer">
+              NWCC Weather Data
             </a>
           </li>
         </ul>

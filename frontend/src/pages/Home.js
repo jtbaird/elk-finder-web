@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <Box>
+    <Box sx={{ color: 'rgb(74, 76, 41)' }}>
       <Typography variant="h4" gutterBottom>
         Welcome to Bullseye Forecast!
       </Typography>
