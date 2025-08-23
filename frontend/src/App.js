@@ -13,14 +13,15 @@ function Banner() {
     <Box
       sx={{
         width: '100%',
-        height: 200,
+        height: { xs: 120, sm: 200 }, // Fixed height for mobile and desktop
+        minHeight: { xs: 120, sm: 200 }, // Prevent shrinking
         backgroundImage: 'url(/images/banner.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        position: 'relative',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'relative',
       }}
     >
       <Typography
@@ -30,12 +31,12 @@ function Banner() {
           backgroundColor: 'rgba(164, 167, 149, 0.5)',
           px: 3,
           py: 1,
-          borderRadius: 0,
           position: 'absolute',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -50%)', // Center both vertically and horizontally
-          fontFamily: 'Times New Roman, Times, serif'
+          transform: 'translate(-50%, -50%)',
+          fontFamily: 'Times New Roman, Times, serif',
+          fontSize: { xs: '1.5rem', sm: '2.5rem' },
         }}
       >
         BULLSEYE FORECAST
