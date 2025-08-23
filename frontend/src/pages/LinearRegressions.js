@@ -18,7 +18,7 @@ function LinearRegressions() {
       </Typography>
       <Typography variant="body1" paragraph>
         Prediction models are getting rolled out at the speed I clean and normalize the data. To give my reader(s?) a little taste of what's to come, I've made some
-        preliminary charts to give an idea of where this project will go. I figured we'd start with something extremely simple, a line graph of success rates over time.
+        preliminary charts. I figured we'd start with something extremely simple, a line graph of success rates over time.
         After all, what if every hunt is trending towards 100% success, in which case this whole project is pointless? Sounds like something that may be worth checking early,
         so here we go:
       </Typography>

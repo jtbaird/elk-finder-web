@@ -71,15 +71,30 @@ function NavTabs() {
   const handleCollapse = () => setMethodologyOpen(false);
 
   return (
-    <Box>
+    <Box
+      sx={{
+        backgroundColor: 'rgb(164, 167, 149)', // Your green color
+        minWidth: 180, // Set the width for both background and tabs
+        width: 180,
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+      }}>
       <Tabs
         orientation="vertical"
         value={tabValue}
         textColor="inherit"
         sx={{
+          position: 'sticky',
+          top: { xs: 120, sm: 200 }, // Adjust to match your banner height
+          left: 0,
+          minWidth: 180,
+          width: 180,
+          height: 'calc(100vh - 200px)', // Adjust for banner height
+          overflowY: 'auto',
+          zIndex: 1000,
           borderRight: 1,
           borderColor: 'divider',
-          minWidth: 180,
           mt: 0,
           '& .MuiTab-root': {
             color: 'black',
@@ -97,7 +112,7 @@ function NavTabs() {
         }}
       >
         <Tab label="Home" value={TAB_HOME} component={Link} to="/home" onClick={handleCollapse} />
-        <Tab label="Prediction" value={TAB_PREDICTION} component={Link} to="/prediction" onClick={handleCollapse} />
+        <Tab label="2025 Prediction" value={TAB_PREDICTION} component={Link} to="/prediction" onClick={handleCollapse} />
         <Tab
           label="Methodology"
           value={TAB_METHODOLOGY}
