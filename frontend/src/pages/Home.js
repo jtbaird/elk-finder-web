@@ -20,7 +20,7 @@ function Home() {
           </li>
           <li>Ensuring successful breeding among the managed population
             <ul>
-              <li>Old bulls are often strong enough to earn mating rates, but sterile from age. Culling these animals is vital to successful reproduction.</li>
+              <li>Old bulls are often strong enough to earn mating rights, but sterile from age. Culling these animals is vital to successful reproduction.</li>
             </ul>
           </li>
           <li>Protecting public health
