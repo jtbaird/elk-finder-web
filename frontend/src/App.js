@@ -14,7 +14,7 @@ function Banner() {
       sx={{
         width: '100%',
         height: 200,
-        backgroundImage: 'url(/banner.jpg)',
+        backgroundImage: 'url(/images/banner.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',

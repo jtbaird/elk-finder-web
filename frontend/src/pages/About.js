@@ -9,7 +9,7 @@ function About() {
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
         <Box
           component="img"
-          src="/me.jpg"
+          src="/images/me.jpg"
           alt="John Baird"
           sx={{
             width: 300,
