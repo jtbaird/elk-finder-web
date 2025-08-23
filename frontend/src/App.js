@@ -98,13 +98,11 @@ function NavTabs() {
           mt: 0,
           '& .MuiTab-root': {
             color: 'black',
-            fontFamily: 'Times New Roman, Times, serif',
             fontSize: '1.1rem'
           },
           '& .Mui-selected': {
             color: 'rgb(74, 76, 41)',
             fontWeight: 'bold',
-            fontFamily: 'Times New Roman, Times, serif'
           },
           '& .MuiTabs-indicator': {
             backgroundColor: 'rgb(74, 76, 41)',
@@ -121,7 +119,7 @@ function NavTabs() {
         />
         <Tab
           label={
-            <span style={{ fontSize: '.95rem', fontFamily: 'Times New Roman, Times, serif' }}>
+            <span style={{ fontSize: '.95rem' }}>
               Linear Regression
             </span>
           }

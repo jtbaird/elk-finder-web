@@ -8,7 +8,7 @@ function Home() {
         Welcome to Bullseye Forecast!
       </Typography>
       <Typography variant="body1" paragraph>
-        The purpose of this project is to combine open source DWR harvest reporting data with historical weather data to predict future elk hunting success rates in Utah. 
+        The purpose of this project is to combine open source DWR harvest reporting data with historical weather data to forecast future elk hunting success rates in Utah. 
         If we can better predict animal populations, then we can more accurately allocate hunters, and thereby better fulfill our responsibility 
         to manage wild animals. Effective animal stewardship is the ethical and practical responsibility of all people living among animal populations. 
         In practical terms, managing animal populations has many benefits:
