@@ -32,16 +32,20 @@ function Home() {
         This list is not exhaustive, and does not begin to touch the vast economic and cultural benefits of hunting. Head over to our <Link to="/methodology/regression">linear regression page</Link> to see some preliminary forecasting!
       </Typography>
       <Typography variant="h5" gutterBottom>
-        How to Navigate
+        Current status
       </Typography>
       <Typography variant="body1" paragraph>
-        Use the tabs on the left to access different sections:
         <ul>
-          <li><strong>Home:</strong> Return to this page at any time.</li>
-          <li><strong>Prediction:</strong> View elk hunt success predictions.</li>
-          <li><strong>Linear Regression:</strong> Explore our regression model results.</li>
-          <li><strong>Data Sources:</strong> Learn about the data behind our forecasts.</li>
-          <li><strong>About:</strong> Find out more about this project and its creator.</li>
+          <li><strong>Weather data collection:</strong></li>
+          <ul>
+            <li>This is probably the most arduous and largest effort of the whole project. This really is the core of the project though,
+               so once it's completed I think we'll start to see something interesting.
+            </li>
+          </ul>
+          <li><strong>Feature exploration:</strong></li>
+          <ul>
+            <li>I'm expecting to need a break from the weather data, and will probably use feature exploration to keep things interesting. Assuming that's successful, expect more linear regressions.</li>
+          </ul>
         </ul>
       </Typography>
       <Typography variant="body1">
